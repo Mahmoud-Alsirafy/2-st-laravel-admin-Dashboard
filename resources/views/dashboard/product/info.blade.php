@@ -1,0 +1,66 @@
+@extends("dashboard.layout.main")
+
+@section("content")
+
+
+
+
+<div class="col-lg-6 grid-margin stretch-card w-100">
+    <div class="card">
+      <div class="card-body">
+        <table class="table table-hover d-flex ">
+          <thead >
+            <tr class="d-flex flex-column">
+                <th scope="col">Number</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Count</th>
+                <th scope="col">Cat</th>
+                <th style="padding: 26px">Image</th>
+              <th style="padding: 30px">Edit</th>
+              <th style="padding: 30px">Delete</th>
+            </tr>
+          </thead>
+          <tbody >
+            @forelse ( $pro as $key=>$value )
+            <tr class="d-flex flex-column">
+                <td scope="col">{{ ++$key }}</td>
+                <td scope="col">{{ $value->name }}</td>
+                <td scope="col">{{ $value->price }}</td>
+                <td scope="col">{{ $value->count }}</td>
+                <td scope="col">{{ $value->cat }}</td>
+                <td>
+                    @foreach ( $value->image as $v )
+                        <img src="{{ asset("storage/images/".$v->image) }}" class="" alt="">
+                    @endforeach
+                </td>
+                <td>
+                    <form action="{{ route('product.show',$value->id) }}" method="post">
+                        @csrf
+                        @method("GET")
+                        <button type="submit" class="btn btn-primary">Edit</button>
+                      </form>
+                </td>
+                <td>
+                    <form action="{{ route('product.destroy',$value->id) }}" method="post">
+                      @csrf
+                      @method("DELETE")
+                      <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </td>
+
+
+              </tr>
+            @empty
+
+            @endforelse
+
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>
+
+
+@endsection
