@@ -1,4 +1,4 @@
-{{-- 
+{{--
 @if (Route::has('login'))
     <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
         @auth
@@ -12,3 +12,4 @@
         @endauth
     </div>
 @endif --}}
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum quam delectus in ex. Ipsam, molestias quam nihil odit nisi autem? Neque aliquam voluptas hic nobis, aliquid dignissimos esse nulla laudantium.

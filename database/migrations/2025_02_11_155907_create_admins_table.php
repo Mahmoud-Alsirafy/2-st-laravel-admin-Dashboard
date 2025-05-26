@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('email',150)->unique();
             $table->string('password',400);
             $table->enum("gender",[0,1]);
-            $table->string("permission",400);
+            $table->string("permission",400)->nullable();
             $table->timestamps();
         });
     }
