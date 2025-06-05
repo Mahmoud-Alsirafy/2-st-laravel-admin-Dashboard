@@ -31,12 +31,14 @@
                     <i class="mdi mdi-home menu-icon"></i>
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('Featured.index') }}">
-                    <span class="menu-title">Featured</span>
+
+
+            {{-- <li class="nav-item">
+                <a class="nav-link" href="{{ route('Trending.index') }}">
+                    <span class="menu-title">Trending</span>
                     <i class="mdi mdi-home menu-icon"></i>
                 </a>
-            </li>
+            </li> --}}
 
         </ul>
     </nav>

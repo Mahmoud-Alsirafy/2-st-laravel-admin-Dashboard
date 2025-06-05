@@ -21,7 +21,24 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
+        'gender',
+        'permission',
     ];
+
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin';
+    }
+    public function setPermissionAttribute($per)
+    {
+        return $this->attributes["permission"] = implode(" ", $per);
+    }
+
+    public function getPermissionAttribute($per)
+    {
+        return explode(" ", $per);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

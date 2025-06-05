@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\dash;
 
-use App\Models\Admin;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\AdminRequest;
 use App\Http\Controllers\Controller;
@@ -16,8 +16,9 @@ class adminController extends Controller
      */
     public function index()
     {
-       $admin = Admin::all();
-        return view("dashboard.admin.view",compact("admin"));
+      $users = User::all();
+    //   return $Users;
+        return view("dashboard.admin.view",compact("users"));
     }
 
     /**
@@ -33,7 +34,7 @@ class adminController extends Controller
      */
     public function store(AdminRequest $request)
     {
-        Admin::create($request->toArray());
+        User::create($request->toArray());
         return to_route('admin.index');
     }
 
@@ -42,7 +43,7 @@ class adminController extends Controller
      */
     public function show(string $id)
     {
-       $admin = Admin::find($id);
+       $admin = User::find($id);
        return view("dashboard.admin.edit",compact("admin"));
     }
 
@@ -51,7 +52,7 @@ class adminController extends Controller
      */
     public function edit(string $id)
     {
-        $user = Admin::where("id",$id)->get();
+        $user = User::where("id",$id)->get();
         return view("dashboard.admin.info",compact("user"));
     }
 
@@ -62,7 +63,7 @@ class adminController extends Controller
     {
         $data = $request->except("_token","_method");
         $data["permission"] = implode(" ",$request->permission);
-        Admin::where("id",$id)->update($data);
+        User::where("id",$id)->update($data);
         return to_route("admin.index");
     }
 
@@ -71,7 +72,7 @@ class adminController extends Controller
      */
     public function destroy(string $id)
     {
-        Admin::where("id",$id)->delete();
+        User::where("id",$id)->delete();
         return to_route("admin.index");
     }
 }

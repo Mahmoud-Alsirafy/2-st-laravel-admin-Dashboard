@@ -34,6 +34,16 @@
               <option @selected($admin->gender=='0') value="0">Female</option>
             </select>
           </div>
+          <div class="form-group">
+            @error('role')
+            <p style="color: red">{{ $message }}</p>
+            @enderror
+            <label for="exampleSelectGender">Role</label>
+            <select class="form-control" name="role" id="exampleSelectGender">
+              <option @selected(old("role")=='admin') value="admin">Admin</option>
+              <option @selected(old("role")=='user') value="user">User</option>
+            </select>
+          </div>
           @error('permission')
           <p style="color: red">{{ $message }}</p>
           @enderror

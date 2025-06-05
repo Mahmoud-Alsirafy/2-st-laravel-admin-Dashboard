@@ -13,37 +13,38 @@
               <th>Number</th>
               <th>Name</th>
               <th>Email</th>
+              <th>Role</th>
               <th>Gender</th>
               <th>More Info</th>
             </tr>
           </thead>
           <tbody>
-            @forelse ( $admin as $key=>$value )
-            <tr>
-                <td>{{ ++$key }}</td>
-                <td>{{ $value->name}}</td>
-                <td>{{ $value->email}}</td>
-                <td>{{ $value->gender==1?"male":"female"}}</td>
-                {{-- <td class="col" class="w-25">
-                    @foreach ($value["permission"] as $v )
-                        {{ $v }}
-                    @endforeach
-                </td> --}}
+            @if(isset($users))
+              @forelse ( $users as $key=>$value )
+              <tr>
+                  <td>{{ ++$key }}</td>
+                  <td>{{ $value->name}}</td>
+                  <td>{{ $value->email}}</td>
+                  <td>{{ $value->role}}</td>
+                  <td>{{ $value->gender==1 ?"male":"female"}}</td>
 
-                <td>
-                    <form action="{{ route('admin.edit',$value->id) }}" method="post">
-                        @csrf
-                        @method("GET")
-                        <button type="submit" class="btn btn-success">MoreInfo </button>
-                      </form>
-                </td>
+
+                  <td>
+                      <form action="{{ route('admin.edit',$value->id) }}" method="post">
+                          @csrf
+                          @method("GET")
+                          <button type="submit" class="btn btn-success">MoreInfo </button>
+                        </form>
+                  </td>
 
 
 
-              </tr>
-            @empty
-
-            @endforelse
+                </tr>
+              @empty
+              @endforelse
+            @else
+              <tr><td colspan="6">No users found.</td></tr>
+            @endif
 
 
           </tbody>

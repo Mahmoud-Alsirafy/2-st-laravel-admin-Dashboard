@@ -26,7 +26,7 @@ class ProductRequest extends FormRequest
             "price"=>"required|numeric|min:1",
             "count"=>"required|numeric|min:1",
             "cat"=>"required",
-            "image"=>"required",
+            "image"=>"required|max:4|min:4",
             "image.*"=>"required|image|mimes:jpeg,png,jpg,gif,svg|max:2048",
         ];
 

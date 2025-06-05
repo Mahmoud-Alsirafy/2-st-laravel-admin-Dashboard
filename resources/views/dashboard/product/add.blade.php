@@ -33,7 +33,7 @@
               </div>
             @enderror
             <label for="exampleInputPassword4">count</label>
-            <input type="number" name="count" value="{{ old('count') }}" class="form-control" id="exampleInputPassword4" placeholder="count">
+            <input type="number" name="count" value="{{ old('count') }}"  class="form-control" id="exampleInputPassword4" placeholder="count">
           </div>
           <div class="form-group">
             @error('cat')

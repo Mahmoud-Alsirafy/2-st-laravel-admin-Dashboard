@@ -5,11 +5,10 @@ namespace App\Http\Controllers\dash;
 use App\Models\Image;
 use App\Models\Product;
 use Illuminate\Http\Request;
-use PhpParser\Node\Stmt\TryCatch;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
-use Exception;
+
 
 class productController extends Controller
 {

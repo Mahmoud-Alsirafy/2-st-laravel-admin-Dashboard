@@ -7,6 +7,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Auth\Events\Lockout;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Validation\ValidationException;
@@ -42,16 +43,8 @@ class LoginRequest extends FormRequest
     public function authenticate(): void
     {
         $this->ensureIsNotRateLimited();
-
+        $password = $this->input('password');
         $email = $this->input('email');
-        $admin = DB::table('admins')->where('email', $email)->first();
-        if (!$admin) {
-            redirect()->route('user.index')->send();
-            toastr()->error('Your Email Is Not Registered');
-        }
-
-
-        // $password = $this->input('password');
 
         if (! Auth::attempt($this->only('email', 'password'), $this->boolean('remember'))) {
             RateLimiter::hit($this->throttleKey());
@@ -60,10 +53,20 @@ class LoginRequest extends FormRequest
                 'email' => trans('auth.failed'),
             ]);
         }
-        $name = DB::table('admins')->where('email', $email)->value('name');
-        RateLimiter::clear($this->throttleKey());
-        toastr()->success("Wellcome Back  $name");
 
+
+        $user=Auth::user();
+        if($user->role !=='admin'){
+            RateLimiter::clear($this->throttleKey());
+            // redirect()->route('index.index');
+            // Auth::logout();
+            // throw ValidationException::withMessages([
+            //     'email' => ' Email Is Not Accepted',
+            // ]);
+        }
+
+        redirect('/home');
+        RateLimiter::clear($this->throttleKey());
     }
 
     /**
@@ -94,6 +97,6 @@ class LoginRequest extends FormRequest
      */
     public function throttleKey(): string
     {
-        return Str::transliterate(Str::lower($this->string('email')).'|'.$this->ip());
+        return Str::transliterate(Str::lower($this->string('email')) . '|' . $this->ip());
     }
 }
