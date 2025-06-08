@@ -11,7 +11,7 @@
               moved or deleted.
             </p>
             <div class="button">
-              <a href="{{ route('home') }}" class="btn">Back to Home</a>
+              <a href="{{ route('index') }}" class="btn">Back to Home</a>
             </div>
           </div>
         </div>

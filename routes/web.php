@@ -50,9 +50,7 @@ Route::middleware(['auth', 'CheckAdmin'])->prefix('dash')->group(function () {
 });
 
 
-Route::get('/home', function () {
-    return view('project.layout.main');
-})->middleware(['auth'])->name('home');
+
 
 Route::middleware(['auth'])->prefix('')->group(function () {
     Route::get('about', [aboutController::class, 'index'])->name('about');

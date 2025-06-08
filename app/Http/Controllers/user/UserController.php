@@ -8,8 +8,8 @@ class UserController extends Controller
 {
  public function index()
  {
-    // $product = Product::with("image")->get();
+    $product = Product::with("image")->get();
     // return $product;
-    return view('project.layout.main');
+    return view('project.layout.main',compact('product'));
  }
 }

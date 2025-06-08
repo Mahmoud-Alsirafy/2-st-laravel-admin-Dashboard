@@ -203,16 +203,22 @@
         </div>
         <div class="row">
 
+            @forelse ($product as $key=>$value )
             <div class="col-lg-3 col-md-6 col-12">
                 <div class="single-product">
                     <div class="product-image">
-                        <img src="{{asset('pro')}}/images/products/product-1.jpg" alt="#" />
+
+                        @if($value->image->first())
+                        <img src="{{ asset('storage/images/' . $value->image->first()->image) }}" alt="">
+                        @endif
+
+                        {{-- <img src="{{asset('pro')}}/images/products/product-1.jpg" alt="#" /> --}}
                         <div class="button">
-                            <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
+                            <a href="{{route('details')}}" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
                         </div>
                     </div>
                     <div class="product-info">
-                        <span class="category">uigi</span>
+                        <span class="category">{{ $value->price }}</span>
                         <h4 class="title">
                             <a href="{{route('grid')}}">Xiaomi Mi Band 5</a>
                         </h4>
@@ -226,10 +232,13 @@
                         </ul>
                         <div class="price">
                             <span>$199.00</span>
-                      </div>
+                        </div>
                     </div>
                 </div>
             </div>
+            @empty
+            <p>No product found</p>
+            @endforelse
         </div>
     </div>
 </section>
@@ -293,7 +302,7 @@
                             <div class="product-image">
                                 <img src="{{asset('pro')}}/images/products/product-3.jpg" alt="#" />
                                 <div class="button">
-                                    <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to
+                                    <a href="{{route('details')}}" class="btn"><i class="lni lni-cart"></i> Add to
                                         Cart</a>
                                 </div>
                             </div>
@@ -321,7 +330,7 @@
                             <div class="product-image">
                                 <img src="{{asset('pro')}}/images/products/product-8.jpg" alt="#" />
                                 <div class="button">
-                                    <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to
+                                    <a href="{{route('details')}}" class="btn"><i class="lni lni-cart"></i> Add to
                                         Cart</a>
                                 </div>
                             </div>
@@ -349,7 +358,7 @@
                             <div class="product-image">
                                 <img src="{{asset('pro')}}/images/products/product-6.jpg" alt="#" />
                                 <div class="button">
-                                    <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to
+                                    <a href="{{route('details')}}" class="btn"><i class="lni lni-cart"></i> Add to
                                         Cart</a>
                                 </div>
                             </div>
@@ -455,8 +464,7 @@
 
                 <div class="single-list">
                     <div class="list-image">
-                        <a href="{{route('grid')}}"><img src="{{asset('pro')}}/images/home-product-list/01.jpg"
-                                alt="#" /></a>
+                        <a href="{{route('grid')}}"><img src="{{asset('pro')}}/images/home-product-list/01.jpg" alt="#" /></a>
                     </div>
                     <div class="list-info">
                         <h3>
@@ -468,8 +476,7 @@
 
                 <div class="single-list">
                     <div class="list-image">
-                        <a href="{{route('grid')}}"><img src="{{asset('pro')}}/images/home-product-list/02.jpg"
-                                alt="#" /></a>
+                        <a href="{{route('grid')}}"><img src="{{asset('pro')}}/images/home-product-list/02.jpg" alt="#" /></a>
                     </div>
                     <div class="list-info">
                         <h3>
@@ -481,8 +488,7 @@
 
                 <div class="single-list">
                     <div class="list-image">
-                        <a href="{{route('grid')}}"><img src="{{asset('pro')}}/images/home-product-list/03.jpg"
-                                alt="#" /></a>
+                        <a href="{{route('grid')}}"><img src="{{asset('pro')}}/images/home-product-list/03.jpg" alt="#" /></a>
                     </div>
                     <div class="list-info">
                         <h3>
@@ -497,8 +503,7 @@
 
                 <div class="single-list">
                     <div class="list-image">
-                        <a href="{{route('grid')}}"><img src="{{asset('pro')}}/images/home-product-list/04.jpg"
-                                alt="#" /></a>
+                        <a href="{{route('grid')}}"><img src="{{asset('pro')}}/images/home-product-list/04.jpg" alt="#" /></a>
                     </div>
                     <div class="list-info">
                         <h3>
@@ -510,8 +515,7 @@
 
                 <div class="single-list">
                     <div class="list-image">
-                        <a href="{{route('grid')}}"><img src="{{asset('pro')}}/images/home-product-list/05.jpg"
-                                alt="#" /></a>
+                        <a href="{{route('grid')}}"><img src="{{asset('pro')}}/images/home-product-list/05.jpg" alt="#" /></a>
                     </div>
                     <div class="list-info">
                         <h3>
@@ -523,8 +527,7 @@
 
                 <div class="single-list">
                     <div class="list-image">
-                        <a href="{{route('grid')}}"><img src="{{asset('pro')}}/images/home-product-list/06.jpg"
-                                alt="#" /></a>
+                        <a href="{{route('grid')}}"><img src="{{asset('pro')}}/images/home-product-list/06.jpg" alt="#" /></a>
                     </div>
                     <div class="list-info">
                         <h3>
@@ -539,8 +542,7 @@
 
                 <div class="single-list">
                     <div class="list-image">
-                        <a href="{{route('grid')}}"><img src="{{asset('pro')}}/images/home-product-list/07.jpg"
-                                alt="#" /></a>
+                        <a href="{{route('grid')}}"><img src="{{asset('pro')}}/images/home-product-list/07.jpg" alt="#" /></a>
                     </div>
                     <div class="list-info">
                         <h3>
@@ -552,8 +554,7 @@
 
                 <div class="single-list">
                     <div class="list-image">
-                        <a href="{{route('grid')}}"><img src="{{asset('pro')}}/images/home-product-list/08.jpg"
-                                alt="#" /></a>
+                        <a href="{{route('grid')}}"><img src="{{asset('pro')}}/images/home-product-list/08.jpg" alt="#" /></a>
                     </div>
                     <div class="list-info">
                         <h3>
@@ -565,8 +566,7 @@
 
                 <div class="single-list">
                     <div class="list-image">
-                        <a href="{{route('grid')}}"><img src="{{asset('pro')}}/images/home-product-list/09.jpg"
-                                alt="#" /></a>
+                        <a href="{{route('grid')}}"><img src="{{asset('pro')}}/images/home-product-list/09.jpg" alt="#" /></a>
                     </div>
                     <div class="list-info">
                         <h3>

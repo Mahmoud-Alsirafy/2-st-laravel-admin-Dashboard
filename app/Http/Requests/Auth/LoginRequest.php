@@ -65,7 +65,7 @@ class LoginRequest extends FormRequest
             // ]);
         }
 
-        redirect('/home');
+        redirect('/index');
         RateLimiter::clear($this->throttleKey());
     }
 
