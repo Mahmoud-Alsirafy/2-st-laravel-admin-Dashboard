@@ -69,6 +69,10 @@ Route::middleware(['auth'])->prefix('')->group(function () {
 });
 
 
+    Route::resource('detail', detailsController::class);
+
+
+
 
 
 Route::middleware(['CheckAdmin'])->prefix('home')->group(function () {

@@ -203,7 +203,7 @@
         </div>
         <div class="row">
 
-            @forelse ($product as $key=>$value )
+            @forelse ($product as $value )
             <div class="col-lg-3 col-md-6 col-12">
                 <div class="single-product">
                     <div class="product-image">
@@ -213,14 +213,19 @@
                         @endif
 
                         {{-- <img src="{{asset('pro')}}/images/products/product-1.jpg" alt="#" /> --}}
-                        <div class="button">
-                            <a href="{{route('details')}}" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
+                        <div class="button ">
+                            <form action="{{ route('detail.show',$value->id) }}" method="post">
+                                @csrf
+                                @method('GET')
+                                {{-- <input type="text" hidden value="{{ $value->id }}" /> --}}
+                                <button class="btn-primary"> <i class="lni lni-cart"></i> Add to Cart</button>
+                            </form>
                         </div>
                     </div>
                     <div class="product-info">
-                        <span class="category">{{ $value->price }}</span>
+                        <span class="category">{{ $value->cat }}</span>
                         <h4 class="title">
-                            <a href="{{route('grid')}}">Xiaomi Mi Band 5</a>
+                            <a href="{{route('grid')}}">{{ $value->name }}</a>
                         </h4>
                         <ul class="review">
                             <li><i class="lni lni-star-filled"></i></li>
@@ -231,8 +236,9 @@
                             <li><span>4.0 Review(s)</span></li>
                         </ul>
                         <div class="price">
-                            <span>$199.00</span>
+                            <span>{{ $value->price }}</span>
                         </div>
+                        
                     </div>
                 </div>
             </div>

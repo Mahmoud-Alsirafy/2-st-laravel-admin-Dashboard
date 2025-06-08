@@ -24,9 +24,10 @@ class ProductRequest extends FormRequest
         return [
             "name"=>"required|string|min:1",
             "price"=>"required|numeric|min:1",
+            "old_price"=>"required|numeric|min:1",
             "count"=>"required|numeric|min:1",
             "cat"=>"required",
-            "image"=>"required|max:4|min:4",
+            "image"=>"required|max:5|min:5",
             "image.*"=>"required|image|mimes:jpeg,png,jpg,gif,svg|max:2048",
         ];
 

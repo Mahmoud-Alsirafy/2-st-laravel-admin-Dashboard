@@ -14,6 +14,7 @@
                 <th scope="col">Number</th>
                 <th scope="col">Name</th>
                 <th scope="col">Price</th>
+                <th scope="col">Old Price</th>
                 <th scope="col">Count</th>
                 <th scope="col">Cat</th>
                 <th style="padding: 26px">Image</th>
@@ -27,6 +28,7 @@
                 <td scope="col">{{ ++$key }}</td>
                 <td scope="col">{{ $value->name }}</td>
                 <td scope="col">{{ $value->price }}</td>
+                <td scope="col">{{ $value->old_price }}</td>
                 <td scope="col">{{ $value->count }}</td>
                 <td scope="col">{{ $value->cat }}</td>
                 <td>

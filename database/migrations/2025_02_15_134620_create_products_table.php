@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("name" , 55);
             $table->string("price" , 50);
+            $table->string("old_price" , 50);
             $table->string("count" , 50);
             $table->string("cat", 50);
             $table->timestamps();
