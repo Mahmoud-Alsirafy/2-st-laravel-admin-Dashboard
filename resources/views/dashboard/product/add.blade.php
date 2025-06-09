@@ -33,7 +33,7 @@
               </div>
             @enderror
             <label for="exampleInputEmail3">Old Price</label>
-            <input type="number" name="old_price" value="{{ old('old_price') }}" class="form-control" id="exampleInputEmail3" placeholder="old_price">
+            <input type="number" name="old_price" value="{{ old('old_price') }}" class="form-control" value="-" id="exampleInputEmail3" placeholder="old_price">
           </div>
           <div class="form-group">
             @error('count')

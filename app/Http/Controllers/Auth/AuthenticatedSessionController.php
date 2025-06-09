@@ -34,8 +34,8 @@ class AuthenticatedSessionController extends Controller
         }
         // return redirect()->intended(route('index.index'));
 
-        toastr()->success("Welcome " . Auth::user()->name);
         return redirect('/index');
+        toastr()->success("Welcome " . Auth::user()->name);
         // return redirect()->intended(route('index.index', absolute: false));
         // else
     }

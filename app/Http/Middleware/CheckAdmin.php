@@ -28,6 +28,6 @@ class CheckAdmin
 
 
 
-       return redirect('/home');
+       return redirect('/index');
     }
 }

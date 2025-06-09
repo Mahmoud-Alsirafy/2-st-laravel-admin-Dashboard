@@ -214,11 +214,11 @@
 
                         {{-- <img src="{{asset('pro')}}/images/products/product-1.jpg" alt="#" /> --}}
                         <div class="button ">
-                            <form action="{{ route('detail.show',$value->id) }}" method="post">
+                            <form action="{{ route('details.show',$value->id) }}" method="POST">
                                 @csrf
                                 @method('GET')
-                                {{-- <input type="text" hidden value="{{ $value->id }}" /> --}}
-                                <button class="btn-primary"> <i class="lni lni-cart"></i> Add to Cart</button>
+                                {{-- <input type="text"  hidden value="{{ $value->id }}" /> --}}
+                                <button class="btn"> <i class="lni lni-cart"></i> Add to Cart</button>
                             </form>
                         </div>
                     </div>
@@ -238,7 +238,7 @@
                         <div class="price">
                             <span>{{ $value->price }}</span>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -287,7 +287,7 @@
     </div>
 </section>
 
-<section class="special-offer section">
+{{-- <section class="special-offer section">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -460,7 +460,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
 <section class="home-product-list section">
     <div class="container">

@@ -25,7 +25,11 @@
                 <td scope="col">{{ ++$key }}</td>
                 <td scope="col">{{ $value->name }}</td>
                 <td scope="col">{{ $value->price }}</td>
+                @if($value->old_price==null)
+                <td scope="col">-</td>
+                @else
                 <td scope="col">{{ $value->old_price }}</td>
+                @endif
                 <td scope="col">{{ $value->count }}</td>
                 <td scope="col">{{ $value->cat }}</td>
 

@@ -302,9 +302,9 @@
                                                 <a href="{{ route('list') }}">Shop List</a>
                                             </li>
                                             <li class="nav-item">
-                                                <a href="{{ route('details') }}">shop Single</a>
+                                                <a href="{{ route('details.index') }}">shop Single</a>
                                             </li>
-                                            <li class="nav-item"><a href="{{ route('cart') }}">Cart</a></li>
+                                            <li class="nav-item"><a href="{{ route('cart.index') }}">Cart</a></li>
                                             <li class="nav-item">
                                                 <a href="{{ route('checkout') }}">Checkout</a>
                                             </li>

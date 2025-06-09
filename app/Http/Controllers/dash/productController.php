@@ -49,9 +49,11 @@ class productController extends Controller
 
                 DB::commit();
                 return to_route("product.index");
+                toastr()->success("Success Added Product");
             } catch (\Throwable $th) {
                 DB::rollBack();
                 return to_route("product.create");
+                toastr()->error("Something Wrong!");
             }
         }
     }
@@ -88,10 +90,12 @@ class productController extends Controller
             Product::where("id", $id)->update($products);
             Image::saveImage($id, $image["image"]);
             return to_route("product.index");
+            toastr()->success("Success Update Product");
         } else {
             $data = $request->except("_method", "_token");
             Product::where("id", $id)->update($data);
             return to_route("product.index");
+            toastr()->error("Something Wrong!");
         }
     }
 
@@ -103,5 +107,6 @@ class productController extends Controller
       Image::deleteImage($id);
       Product::where("id", $id)->delete();
       return to_route("product.index");
+      toastr()->warning("Success Delete Product");
     }
 }

@@ -60,8 +60,8 @@ Route::middleware(['auth'])->prefix('')->group(function () {
     Route::get('mail', [mailController::class, 'index'])->name('mail');
     Route::get('grid', [gridController::class, 'index'])->name('grid');
     Route::get('list', [listController::class, 'index'])->name('list');
-    Route::get('details', [detailsController::class, 'index'])->name('details');
-    Route::get('cart', [cartController::class, 'index'])->name('cart');
+    // Route::get('details', [detailsController::class, 'index'])->name('details');
+    // Route::get('cart', [cartController::class, 'index'])->name('cart');
     Route::get('checkout', [CheckoutController::class, 'index'])->name('checkout');
     Route::get('single', [singleController::class, 'index'])->name('single');
     Route::get('grid_sidebar', [gridsidebarController::class, 'index'])->name('grid_sidebar');
@@ -69,7 +69,8 @@ Route::middleware(['auth'])->prefix('')->group(function () {
 });
 
 
-    Route::resource('detail', detailsController::class);
+    Route::resource('details', detailsController::class);
+    Route::resource('cart', cartController::class);
 
 
 
