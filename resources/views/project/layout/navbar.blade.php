@@ -105,10 +105,12 @@
                                 <li>
                                     <a href="{{ route('register')}}">register</a>
                                 </li>
-                                {{-- <li>
-                                    <a href="{{ route('logout')}}">logout
-                                </a>
-                                </li> --}}
+                                <li>
+                                   <form action="{{ route('logout') }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="btn btn-primary">logout</button>
+                                   </form>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -297,9 +299,6 @@
                                         <ul class="sub-menu collapse" id="submenu-1-3">
                                             <li class="nav-item">
                                                 <a href="{{ route('grid') }}">Shop Grid</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a href="{{ route('list') }}">Shop List</a>
                                             </li>
                                             <li class="nav-item">
                                                 <a href="{{ route('details.index') }}">shop Single</a>

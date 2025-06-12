@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use App\Models\image;
-use App\Models\users\cart;
+use App\Models\users\Cart;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -24,6 +24,6 @@ class Product extends Model
     }
     public function cart()
     {
-        return $this->hasMany(cart::class);
+        return $this->hasMany(Cart::class);
     }
 }

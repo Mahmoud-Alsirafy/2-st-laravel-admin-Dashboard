@@ -115,6 +115,7 @@
                                 <form action="{{ route('cart.store') }}" method="POST">
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                    {{-- <input type="hidden" name="user_id" value="{{ auth()->id() }}"> --}}
                                     <select class="form-control" name="Quantity">
                                         @for($i = 1; $i <= $product->count; $i++)
                                             <option value="{{ $i }}">{{ $i }}</option>

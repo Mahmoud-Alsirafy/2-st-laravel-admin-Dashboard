@@ -26,7 +26,7 @@ use App\Http\Controllers\user\gridsidebar\gridsidebarController;
 
 Route::group(['middleware' => ['guest']], function () {
     Route::get('/', function () {
-        return view('auth.register');
+        return view('auth.login');
     });
 });
 
@@ -59,7 +59,6 @@ Route::middleware(['auth'])->prefix('')->group(function () {
     Route::get('faq', [faqController::class, 'index'])->name('faq');
     Route::get('mail', [mailController::class, 'index'])->name('mail');
     Route::get('grid', [gridController::class, 'index'])->name('grid');
-    Route::get('list', [listController::class, 'index'])->name('list');
     // Route::get('details', [detailsController::class, 'index'])->name('details');
     // Route::get('cart', [cartController::class, 'index'])->name('cart');
     Route::get('checkout', [CheckoutController::class, 'index'])->name('checkout');
@@ -68,10 +67,12 @@ Route::middleware(['auth'])->prefix('')->group(function () {
     Route::get('index', [UserController::class, 'index'])->name('index');
 });
 
+Route::middleware(['auth'])->prefix('')->group(function () {
 
     Route::resource('details', detailsController::class);
     Route::resource('cart', cartController::class);
 
+});
 
 
 

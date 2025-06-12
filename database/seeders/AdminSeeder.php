@@ -31,5 +31,13 @@ class AdminSeeder extends Seeder
             'gender'=>'1',
             'permission'=>[],
         ]);
+        User::create([
+            'name' => 'wael',
+            'email' => 'wael@gmail.com',
+            'password' => Hash::make('123456789mM$'), // متنساش تشفره
+            'role'=>'user',
+            'gender'=>'1',
+            'permission'=>[],
+        ]);
     }
 }

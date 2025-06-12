@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string("name" , 55);
+            $table->string("name" , 55)->unique();
             $table->string("price" , 50);
-            $table->string("old_price" , 50)->nullable()->default("-");
+            $table->string("old_price" , 50)->nullable();
             $table->string("count" , 50);
             $table->string("cat", 50);
             $table->timestamps();

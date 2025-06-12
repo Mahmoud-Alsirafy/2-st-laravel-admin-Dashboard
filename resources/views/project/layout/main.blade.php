@@ -211,13 +211,10 @@
                         @if($value->image->first())
                         <img src="{{ asset('storage/images/' . $value->image->first()->image) }}" alt="">
                         @endif
-
-                        {{-- <img src="{{asset('pro')}}/images/products/product-1.jpg" alt="#" /> --}}
                         <div class="button ">
                             <form action="{{ route('details.show',$value->id) }}" method="POST">
                                 @csrf
                                 @method('GET')
-                                {{-- <input type="text"  hidden value="{{ $value->id }}" /> --}}
                                 <button class="btn"> <i class="lni lni-cart"></i> Add to Cart</button>
                             </form>
                         </div>
