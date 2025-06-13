@@ -33,12 +33,12 @@
             </li>
 
 
-            {{-- <li class="nav-item">
-                <a class="nav-link" href="{{ route('Trending.index') }}">
-                    <span class="menu-title">Trending</span>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('offer.index') }}">
+                    <span class="menu-title">Special Offer</span>
                     <i class="mdi mdi-home menu-icon"></i>
                 </a>
-            </li> --}}
+            </li>
 
         </ul>
     </nav>

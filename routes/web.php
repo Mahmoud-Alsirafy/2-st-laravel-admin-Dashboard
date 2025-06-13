@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\user\UserController;
 use App\Http\Controllers\dash\adminController;
+use App\Http\Controllers\dash\offerController;
 use App\Http\Controllers\dash\productController;
 use App\Http\Controllers\user\faq\faqController;
 use App\Http\Controllers\user\cart\cartController;
@@ -45,6 +46,7 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth', 'CheckAdmin'])->prefix('dash')->group(function () {
     Route::resource("admin", adminController::class);
     Route::resource("product", productController::class);
+    Route::resource("offer", offerController::class);
 
     // Route::resource('user', UserController::class);
 });
