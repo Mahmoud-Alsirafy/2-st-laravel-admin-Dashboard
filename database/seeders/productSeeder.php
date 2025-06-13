@@ -23,11 +23,11 @@ class productSeeder extends Seeder
         ]);
 
         $images = [
-            "684750663a15b.jpg",
-            "684750663abe3.jpg",
-            "684750663b6e1.jpg",
-            "684750663c542.jpg",
-            "684750663ce4c.jpg"
+            "684c8f593a247.jpg",
+            "684c8f593acf9.jpg",
+            "684c8f593b73b.jpg",
+            "684c8f593997e.jpg",
+            "684c8f5939189.jpg"
         ];
 
         foreach ($images as $img) {
@@ -47,11 +47,11 @@ class productSeeder extends Seeder
         ]);
 
         $images = [
-            "684750663b6e1.jpg",
-            "684750663a15b.jpg",
-            "684750663abe3.jpg",
-            "684750663c542.jpg",
-            "684750663ce4c.jpg"
+            "684c8f593b73b.jpg",
+            "684c8f593a247.jpg",
+            "684c8f593acf9.jpg",
+            "684c8f593997e.jpg",
+            "684c8f5939189.jpg"
         ];
 
         foreach ($images as $img) {
@@ -73,11 +73,11 @@ class productSeeder extends Seeder
         ]);
 
         $images = [
-            "684750663abe3.jpg",
-            "684750663a15b.jpg",
-            "684750663b6e1.jpg",
-            "684750663c542.jpg",
-            "684750663ce4c.jpg"
+            "684c8f593acf9.jpg",
+            "684c8f593a247.jpg",
+            "684c8f593b73b.jpg",
+            "684c8f593997e.jpg",
+            "684c8f5939189.jpg"
         ];
 
         foreach ($images as $img) {
@@ -99,11 +99,11 @@ class productSeeder extends Seeder
         ]);
 
         $images = [
-            "684750663c542.jpg",
-            "684750663b6e1.jpg",
-            "684750663abe3.jpg",
-            "684750663a15b.jpg",
-            "684750663ce4c.jpg"
+            "684c8f593997e.jpg",
+            "684c8f593b73b.jpg",
+            "684c8f593acf9.jpg",
+            "684c8f593a247.jpg",
+            "684c8f5939189.jpg"
         ];
 
         foreach ($images as $img) {
@@ -126,11 +126,11 @@ class productSeeder extends Seeder
         ]);
 
         $images = [
-            "684750663ce4c.jpg",
-            "684750663b6e1.jpg",
-            "684750663a15b.jpg",
-            "684750663abe3.jpg",
-            "684750663c542.jpg",
+            "684c8f5939189.jpg",
+            "684c8f593b73b.jpg",
+            "684c8f593a247.jpg",
+            "684c8f593acf9.jpg",
+            "684c8f593997e.jpg",
         ];
 
         foreach ($images as $img) {

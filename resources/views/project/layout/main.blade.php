@@ -242,6 +242,9 @@
             @empty
             <p>No product found</p>
             @endforelse
+
+
+            {{ $product->links() }}
         </div>
     </div>
 </section>

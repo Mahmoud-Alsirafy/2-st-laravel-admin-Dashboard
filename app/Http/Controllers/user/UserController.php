@@ -8,7 +8,7 @@ class UserController extends Controller
 {
  public function index()
  {
-    $product = Product::with("image")->get();
+    $product = Product::with("image")->paginate(4);
     // return $product;
     return view('project.layout.main',compact('product'));
  }
