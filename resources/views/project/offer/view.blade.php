@@ -32,13 +32,13 @@
                     <div class="product-images">
                         <main id="gallery">
                             <div class="main-img">
-                                @if($product->image->first())
-                                <img src="{{ asset('storage/images/' . $product->image->first()->image) }}" id="current" alt="">
+                                @if($product->offer_image->first())
+                                <img src="{{ asset('storage/image_offer/' . $product->offer_image->first()->image) }}" id="current" alt="">
                                 @endif
                             </div>
                             <div class="images">
-                                @foreach ($product->image as $value )
-                                <img src="{{ asset('storage/images/' . $value->image) }}" class="img" alt="">
+                                @foreach ($product->offer_image as $value )
+                                <img src="{{ asset('storage/image_offer/' . $value->image) }}" class="img" alt="">
 
                                 @endforeach
                             </div>
@@ -72,7 +72,7 @@
                                 <form action="{{ route('cart.store') }}" method="POST">
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                    <input type="hidden" name="type" value="product">
+                                    <input type="hidden" name="type" value="offer">
                                     {{-- <input type="hidden" name="user_id" value="{{ auth()->id() }}"> --}}
                                     <select class="form-control" name="Quantity">
                                         @for($i = 1; $i <= $product->count; $i++)

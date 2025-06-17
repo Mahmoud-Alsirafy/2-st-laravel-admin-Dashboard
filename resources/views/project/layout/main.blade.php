@@ -311,7 +311,7 @@
                         <img src="{{ asset('storage/image_offer/' . $value->offer_image->first()->image) }}" alt="">
                         @endif
                         <div class="button ">
-                            <form action="{{ route('details.show',$value->id) }}" method="POST">
+                            <form action="{{ route('offer_Details.show',$value->id) }}" method="POST">
                                 @csrf
                                 @method('GET')
                                 <button class="btn"> <i class="lni lni-cart"></i> Add to Cart</button>

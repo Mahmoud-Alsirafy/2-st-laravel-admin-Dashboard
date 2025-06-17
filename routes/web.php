@@ -21,6 +21,7 @@ use App\Http\Controllers\user\single\singleController;
 use App\Http\Controllers\user\contact\contactController;
 use App\Http\Controllers\user\details\detailsController;
 use App\Http\Controllers\user\Checkout\CheckoutController;
+use App\Http\Controllers\user\offer\offerDetailsController;
 use App\Http\Controllers\user\gridsidebar\gridsidebarController;
 
 
@@ -72,6 +73,7 @@ Route::middleware(['auth'])->prefix('')->group(function () {
 Route::middleware(['auth'])->prefix('')->group(function () {
 
     Route::resource('details', detailsController::class);
+    Route::resource('offer_Details', offerDetailsController::class);
     Route::resource('cart', cartController::class);
 
 });

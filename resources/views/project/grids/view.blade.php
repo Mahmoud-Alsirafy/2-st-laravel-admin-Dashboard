@@ -231,6 +231,46 @@
                                 @endforelse
 
 
+                                @forelse ( $offer as $value )
+                                <div class="col-lg-4 col-md-6 col-12">
+                                    <div class="single-product">
+                                        <div class="product-image">
+                                            @if($value->offer_image->first())
+                                            <img src="{{ asset('storage/image_offer/' . $value->offer_image->first()->image) }}" alt="">
+                                            @endif
+                                            <div class="button">
+                                                <form action="{{ route('offer_Details.show',$value->id) }}" method="POST">
+                                                    @csrf
+                                                    @method('GET')
+                                                    <button class="btn"> <i class="lni lni-cart"></i> Add to Cart</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="product-info">
+                                            <span class="category">{{ $value->cat }}</span>
+                                            <h4 class="title">
+                                                <a href="{{ route('grid') }}">{{ $value->name }}</a>
+                                            </h4>
+                                            <ul class="review">
+                                                <li><i class="lni lni-star-filled"></i></li>
+                                                <li><i class="lni lni-star-filled"></i></li>
+                                                <li><i class="lni lni-star-filled"></i></li>
+                                                <li><i class="lni lni-star-filled"></i></li>
+                                                <li><i class="lni lni-star"></i></li>
+                                                <li><span>4.0 Review(s)</span></li>
+                                            </ul>
+                                            <div class="price">
+                                                <span>${{ $value->price }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                @empty
+                                <div class="alert alert-warning text-center">
+                                    <strong>NoProducts Found!</strong>
+                                </div>
+                                @endforelse
+
                             </div>
                             <div class="row">
                                 <div class="col-12">

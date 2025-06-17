@@ -21,9 +21,11 @@ class cartRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            "product_id"=>'required|integer',
-            "Quantity"=>'required|integer',
-        ];
+
+            return [
+                'Quantity' => 'required|integer|min:1',
+                'type' => 'required|in:product,offer',
+            ];  
+
     }
 }
